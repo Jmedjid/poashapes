@@ -37,9 +37,9 @@ public class Point2D {
         return result;
     }
 
-    public void translate (double x, double y){
-        this.x = x;
-        this.y = y;
+    public void translate (double tx, double ty){
+        this.x = this.x + tx;
+        this.y = this.y + ty;
     }
 
     public boolean isOrigin (){
@@ -52,7 +52,9 @@ public class Point2D {
     }
 
     public double distance(Point2D point) {
-        double distance = Math.sqrt((Math.pow(point.x - this.x, 2.0)+Math.pow(point.y - this.y, 2.0)));
+        double tx = this.x - point.x;
+        double ty = this.y - point.y;
+        double distance = Math.sqrt(tx * tx + ty * ty);
         return distance;
     }
 
@@ -62,5 +64,13 @@ public class Point2D {
 
     public double getY() {
         return y;
+    }
+
+    @Override
+    public String toString() {
+        return "Point2D{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }

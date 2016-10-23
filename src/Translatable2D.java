@@ -3,5 +3,5 @@
  */
 public interface Translatable2D {
 
-    Point2D getRefPoint();
+    abstract Point2D getRefPoint();
 }
